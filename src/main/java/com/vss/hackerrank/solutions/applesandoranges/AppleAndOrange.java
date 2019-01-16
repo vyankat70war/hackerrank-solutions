@@ -10,19 +10,20 @@ public class AppleAndOrange {
 		int numberOfApples = 0;
         int numberOfOranges = 0;
 
-        for (int apple : apples) {
+        numberOfApples = getCountOfFruitsNearHome(s, t, a, apples, numberOfApples);
+        numberOfOranges = getCountOfFruitsNearHome(s, t, b, oranges, numberOfOranges);
+        System.out.println(numberOfApples);
+        System.out.println(numberOfOranges);
+
+	}
+
+	private static int getCountOfFruitsNearHome(int s, int t, int a, int[] apples, int numberOfApples) {
+		for (int apple : apples) {
             if (a + apple >= s && a + apple <= t) {
                 numberOfApples++;
             }
         }
-        for (int orange : oranges) {
-            if (b + orange >= s && b + orange <= t) {
-                numberOfOranges++;
-            }
-        }
-        System.out.println(numberOfApples);
-        System.out.println(numberOfOranges);
-
+		return numberOfApples;
 	}
 
 	private static final Scanner scanner = new Scanner(System.in);
